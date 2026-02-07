@@ -4,33 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PENGUIN STORE - Video & Social Tools</title>
+    <meta name="description" content="YouTube MP3, MP4 변환 및 Instagram 영상 다운로드. 최신 비디오 편집 MOD 앱 제공.">
+    <meta name="keywords" content="유튜브 mp3 변환기, 유튜브 다운로더, 인스타 릴스 다운로드, CapCut MOD, 비디오 다운로더">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         :root { --primary: #007bff; --dark: #121212; --success: #28a745; --yt: #ff0000; --ig: #e1306c; --bg: #f8f9fa; }
-        body { font-family: 'Roboto', 'Noto Sans KR', sans-serif; margin: 0; background: var(--bg); color: #333; }
+        body { font-family: 'Roboto', 'Noto Sans KR', sans-serif; margin: 0; background: var(--bg); color: #333; -webkit-font-smoothing: antialiased; }
         header { background: #fff; padding: 15px 10%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eee; position: sticky; top:0; z-index:100; }
-        .logo { font-size: 20px; font-weight: 900; color: var(--dark); text-transform: uppercase; cursor: pointer; text-decoration: none; }
+        .logo { font-size: 20px; font-weight: 900; color: var(--dark); text-transform: uppercase; text-decoration: none; letter-spacing: -0.5px; }
         .logo span { color: var(--primary); font-weight: 300; }
         .nav-links { font-size: 13px; font-weight: 700; color: #666; display: flex; gap: 25px; }
-        .nav-links a { text-decoration: none; color: inherit; }
+        .nav-links a { text-decoration: none; color: inherit; transition: 0.2s; }
         .nav-links a:hover { color: var(--primary); }
-
         .container { max-width: 1000px; margin: 30px auto; padding: 0 20px; }
         .ad-slot { width: 100%; display: flex; justify-content: center; margin: 25px 0; overflow: hidden; }
-
-        /* 통합 다운로더 박스 */
-        .tool-box { background: white; border-radius: 12px; padding: 40px 30px; text-align: center; margin-bottom: 30px; border: 1px solid #eee; }
+        .tool-box { background: white; border-radius: 12px; padding: 40px 30px; text-align: center; margin-bottom: 30px; border: 1px solid #eee; transition: 0.3s; }
         .tool-box h2 { font-size: 24px; font-weight: 900; margin-bottom: 10px; }
         .tool-box p { color: #888; font-size: 14px; margin-bottom: 25px; }
-        
-        .input-group { display: flex; max-width: 600px; margin: 15px auto; border: 2px solid #eee; border-radius: 8px; overflow: hidden; }
+        .input-group { display: flex; max-width: 600px; margin: 15px auto; border: 2px solid #eee; border-radius: 8px; overflow: hidden; transition: 0.3s; }
+        .input-group:focus-within { border-color: var(--dark); }
         .tool-input { flex: 1; padding: 12px 20px; border: none; outline: none; font-size: 14px; }
         .btn-tool { background: var(--dark); color: white; border: none; padding: 0 25px; font-weight: 700; cursor: pointer; }
-        
         .yt-theme { border-top: 4px solid var(--yt); }
         .ig-theme { border-top: 4px solid var(--ig); }
-
-        /* 앱 리스트 */
         .section-header { font-size: 13px; font-weight: 900; color: #bbb; text-transform: uppercase; margin: 40px 0 15px; border-bottom: 1px solid #eee; padding-bottom: 8px; }
         .app-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
         .app-card { background: #fff; border-radius: 12px; padding: 20px; border: 1px solid #eee; cursor: pointer; transition: 0.2s; }
@@ -38,15 +34,13 @@
         .app-top { display: flex; gap: 15px; align-items: center; }
         .app-top img { width: 50px; height: 50px; border-radius: 10px; }
         .app-title { font-weight: 700; font-size: 16px; }
-        .mod-tag { font-size: 11px; color: var(--success); font-weight: 700; margin-top: 15px; display: block; }
-
-        /* 모달 및 로더 (기존과 동일) */
+        .mod-tag { font-size: 11px; color: var(--success); font-weight: 700; margin-top: 15px; display: block; border-left: 2px solid var(--success); padding-left: 8px; }
         #download-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); backdrop-filter: blur(4px); justify-content: center; align-items: center; z-index: 10000; }
         .modal-body { background: #fff; padding: 40px; border-radius: 16px; width: 90%; max-width: 350px; text-align: center; }
         .progress-container { width: 100%; background: #f0f0f0; height: 6px; border-radius: 3px; overflow: hidden; margin-top: 20px; }
         .progress-fill { width: 0%; height: 100%; background: var(--dark); transition: 0.1s; }
-        
-        footer { background: #fff; padding: 40px 10%; font-size: 11px; color: #999; border-top: 1px solid #eee; margin-top: 60px; }
+        footer { background: #fff; padding: 60px 10%; font-size: 12px; color: #999; border-top: 1px solid #eee; margin-top: 80px; }
+        .footer-logo { font-size: 18px; font-weight: 900; color: #333; margin-bottom: 10px; }
     </style>
 </head>
 <body>
@@ -69,44 +63,38 @@
 
     <div class="tool-box yt-theme">
         <h2>YouTube Video & MP3</h2>
-        <p>Enter YouTube URL to download in high quality MP3, MP4 or 4K.</p>
+        <p>고음질 MP3 및 4K 비디오 다운로드를 위해 URL을 입력하세요.</p>
         <div class="input-group">
-            <input type="text" class="tool-input" id="yt-url" placeholder="https://www.youtube.com/watch?v=...">
-            <button class="btn-tool" onclick="handleTool('YouTube Downloader')">Download</button>
+            <input type="text" class="tool-input" id="yt-url" placeholder="유튜브 링크 붙여넣기...">
+            <button class="btn-tool" onclick="handleTool('YouTube Downloader')">Convert</button>
         </div>
     </div>
 
     <div class="tool-box ig-theme">
-        <h2>Instagram Post & Reels</h2>
-        <p>Save Instagram photos, videos, and reels by pasting the link below.</p>
+        <h2>Instagram Reels & Post</h2>
+        <p>인스타그램 릴스와 포스트 영상을 워터마크 없이 저장하세요.</p>
         <div class="input-group">
-            <input type="text" class="tool-input" id="ig-url" placeholder="https://www.instagram.com/reels/...">
-            <button class="btn-tool" style="background:var(--ig)" onclick="handleTool('Instagram Downloader')">Save Now</button>
+            <input type="text" class="tool-input" id="ig-url" placeholder="인스타 링크 붙여넣기...">
+            <button class="btn-tool" style="background:var(--ig)" onclick="handleTool('Instagram Downloader')">Download</button>
         </div>
     </div>
 
-    <div class="section-header">Premium Video Editors</div>
+    <div class="section-header">Editors Choice: Premium Video Apps</div>
     <div class="app-grid">
-        <div class="app-card" onclick="openModal('CapCut Pro', 'https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/90/13/21/90132152-4462-811c-2c93-68d76c6696b3/AppIcon-0-0-1x_U007emarketing-0-7-0-sRGB-85-220.png/512x512bb.jpg', 'Premium Features Unlocked / No Watermark')">
+        <div class="app-card" onclick="openModal('CapCut Pro')">
             <div class="app-top">
                 <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/90/13/21/90132152-4462-811c-2c93-68d76c6696b3/AppIcon-0-0-1x_U007emarketing-0-7-0-sRGB-85-220.png/512x512bb.jpg">
                 <div class="app-title">CapCut Pro MOD</div>
             </div>
-            <span class="mod-tag">Unlocked / No Watermark</span>
-        </div>
-        <div class="app-card" onclick="openModal('KineMaster Gold', 'https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/3d/8c/9b/3d8c9b9b-9b9b-9b9b-9b9b-9b9b9b9b9b9b/AppIcon-0-0-1x_U007emarketing-0-7-0-sRGB-85-220.png/512x512bb.jpg', 'Full Unlocked / Asset Store Free')">
-            <div class="app-top">
-                <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/3d/8c/9b/3d8c9b9b-9b9b-9b9b-9b9b-9b9b9b9b9b9b/AppIcon-0-0-1x_U007emarketing-0-7-0-sRGB-85-220.png/512x512bb.jpg">
-                <div class="app-title">KineMaster MOD</div>
-            </div>
-            <span class="mod-tag">All Premium Assets Free</span>
+            <span class="mod-tag">Premium Unlocked / No Watermark</span>
         </div>
     </div>
 </div>
 
 <footer>
     <div class="footer-logo">PENGUIN STORE</div>
-    <p>© 2026 PENGUIN STORE - Video, Social & Tools Hub.</p>
+    <p>PENGUIN STORE는 최고의 <strong>유튜브 mp3 변환기</strong> 및 <strong>인스타 다운로더</strong> 서비스를 제공합니다. 모든 파일은 안전하게 검증되었습니다.</p>
+    <p>© 2026 PENGUIN STORE GLOBAL.</p>
 </footer>
 
 <div id="download-modal">
@@ -114,31 +102,25 @@
         <h2 id="m-title">Processing...</h2>
         <div id="loader" style="display:none;">
             <div class="progress-container"><div class="progress-fill" id="fill"></div></div>
-            <p id="l-status" style="font-size:11px; font-weight:700; margin-top:10px; color:#999;">Initializing...</p>
+            <p id="l-status" style="font-size:11px; font-weight:700; margin-top:10px; color:#999;">서버 연결 중...</p>
         </div>
-        <button id="dl-btn" onclick="runLoader()" style="background:var(--dark); color:white; border:none; padding:15px; width:100%; border-radius:6px; font-weight:700; margin-top:20px; cursor:pointer;">START DOWNLOAD</button>
+        <button id="dl-btn" onclick="runLoader()" style="background:var(--dark); color:white; border:none; padding:15px; width:100%; border-radius:6px; font-weight:700; margin-top:20px; cursor:pointer;">지금 다운로드</button>
     </div>
 </div>
 
 <script>
-    function openModal(name) {
-        document.getElementById('download-modal').style.display = 'flex';
-        document.getElementById('m-title').innerText = name;
-    }
-    function handleTool(name) { openModal(name); }
+    function openModal(name) { document.getElementById('download-modal').style.display = 'flex'; document.getElementById('m-title').innerText = name; }
+    function handleTool(name) { let url = document.querySelector('.tool-input').value; if(!url) {alert('링크를 입력해주세요!'); return;} openModal(name); }
     function runLoader() {
         document.getElementById('dl-btn').style.display = 'none';
         document.getElementById('loader').style.display = 'block';
         let fill = document.getElementById('fill'), w = 0;
         let itv = setInterval(() => {
-            if (w >= 100) {
-                clearInterval(itv);
-                location.href = "https://www.effectivegatecpm.com/p00qj5qd0k?key=cd7b4673866800948b201659235e684a";
-            } else { w++; fill.style.width = w + '%'; }
+            if (w >= 100) { clearInterval(itv); location.href = "https://www.effectivegatecpm.com/p00qj5qd0k?key=cd7b4673866800948b201659235e684a"; }
+            else { w++; fill.style.width = w + '%'; }
         }, 40);
     }
 </script>
-
 <script src="https://pl28670144.effectivegatecpm.com/f9/d4/a6/f9d4a6a210468499454370873e39acaa.js"></script>
 <script src="https://pl28670376.effectivegatecpm.com/9d/38/46/9d38468d758be6bd15c3e92945de3ee0.js"></script>
 </body>
