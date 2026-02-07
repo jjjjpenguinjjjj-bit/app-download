@@ -3,119 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Softonic KR - 프리미엄 앱 & 게임 모드 센터</title>
+    <title>Softonic Premium - 프리미엄 앱 & 게임 MOD 센터</title>
     <style>
-        body { font-family: 'Malgun Gothic', sans-serif; margin: 0; background: #f4f6f8; color: #333; }
+        body { font-family: 'Malgun Gothic', sans-serif; margin: 0; background: #f0f2f5; color: #333; }
         header { background: #004a99; color: white; padding: 10px 8%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
         .nav-links { display: flex; gap: 15px; font-size: 13px; font-weight: bold; }
-        
         .container { max-width: 1200px; margin: 20px auto; padding: 0 20px; }
-        .section-title { font-size: 22px; font-weight: bold; margin: 40px 0 15px; border-left: 6px solid #e74c3c; padding-left: 15px; color: #333; }
+        
+        /* 섹션 타이틀 */
+        .section-title { font-size: 22px; font-weight: bold; margin: 40px 0 15px; border-left: 6px solid #e74c3c; padding-left: 15px; }
         .blue-title { border-left-color: #004a99; }
 
-        /* 광고 영역 스타일 */
-        .ad-slot { background: #fff; margin: 20px 0; padding: 10px; border: 1px dashed #ccc; text-align: center; border-radius: 8px; }
+        /* 광고 슬롯 */
+        .ad-banner-main { width: 100%; min-height: 90px; background: #fff; margin: 20px 0; border: 1px dashed #bbb; display: flex; align-items: center; justify-content: center; overflow: hidden; }
 
-        /* 앱 그리드 */
-        .app-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
-        .app-card { background: white; border-radius: 12px; padding: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); cursor: pointer; transition: 0.3s; border: 1px solid #eee; position: relative; overflow: hidden; }
-        .app-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        /* 앱 그리드 및 카드 */
+        .app-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+        .app-card { background: white; border-radius: 12px; padding: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); cursor: pointer; border: 1px solid #eee; position: relative; }
+        .app-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); transition: 0.3s; }
+        .tag-mod { position: absolute; top: 10px; right: 10px; background: #e74c3c; color: white; font-size: 11px; padding: 3px 8px; border-radius: 4px; font-weight: bold; }
         .app-top { display: flex; align-items: center; margin-bottom: 15px; }
         .app-top img { width: 60px; height: 60px; border-radius: 12px; margin-right: 15px; }
-        .app-info h3 { margin: 0; font-size: 17px; color: #004a99; }
-        .tag-hot { position: absolute; top: 0; right: 0; background: #e74c3c; color: white; font-size: 11px; padding: 5px 10px; border-bottom-left-radius: 10px; font-weight: bold; }
-        .app-desc { font-size: 13px; color: #666; height: 55px; margin-bottom: 15px; }
-        .btn-dl { background: #004a99; color: white; text-align: center; padding: 10px; border-radius: 5px; font-weight: bold; }
+        .app-info h3 { margin: 0; font-size: 18px; color: #004a99; }
+        .app-desc { font-size: 13px; color: #666; height: 50px; margin-bottom: 15px; overflow: hidden; }
+        .btn-dl { background: #004a99; color: white; text-align: center; padding: 12px; border-radius: 6px; font-weight: bold; }
 
-        footer { background: #2c3e50; color: #bdc3c7; padding: 40px 8%; margin-top: 50px; font-size: 12px; }
+        footer { background: #2c3e50; color: #bdc3c7; padding: 40px 8%; margin-top: 60px; font-size: 12px; }
     </style>
 </head>
 <body>
 
 <header>
     <div style="font-size: 22px; font-weight: bold;">Softonic Premium</div>
-    <div class="nav-links">
-        <span>윈도우</span><span>안드로이드</span><span>아이폰</span><span>MOD버전</span>
-    </div>
+    <div class="nav-links"><span>Windows</span><span>Android</span><span>MOD 버전</span><span>무료 재화</span></div>
 </header>
 
 <div class="container">
-    <div class="ad-slot">
-        <p style="color:#aaa">PREMIUM ADVERTISEMENT</p>
+    <div class="ad-banner-main">
+        <span style="color:#ccc">ADVERTISEMENT</span>
     </div>
 
     <div class="section-title">최신 게임 MOD (버그판/핵)</div>
     <div class="app-grid">
-        <div class="app-card" onclick="openModal('브롤스타즈 버그판 V54.1', 'https://upload.wikimedia.org/wikipedia/en/b/b1/Brawl_Stars_logo.png')">
-            <span class="tag-hot">MOD APK</span>
+        <div class="app-card" onclick="openModal('브롤스타즈 버그판 V54', 'https://upload.wikimedia.org/wikipedia/en/b/b1/Brawl_Stars_logo.png', '모든 스킨 해금 및 무제한 보석이 적용된 최신 MOD APK 파일입니다. 정지 방지 패치가 완료되었습니다.')">
+            <span class="tag-mod">MOD APK</span>
             <div class="app-top">
                 <img src="https://upload.wikimedia.org/wikipedia/en/b/b1/Brawl_Stars_logo.png" alt="bs">
-                <div class="app-info"><h3>Brawl Stars MOD</h3><p>무한 보석/골드 패치</p></div>
+                <div class="app-info"><h3>Brawl Stars MOD</h3><p>무한 보석/스킨 해금</p></div>
             </div>
-            <p class="app-desc">모든 스킨 해금 및 무제한 재화가 적용된 버그판입니다. 안드로이드 전용 설치 파일(APK)을 제공합니다.</p>
-            <div class="btn-dl" style="background: #e74c3c;">버그판 다운로드</div>
+            <p class="app-desc">전 세계 유저와 대결 가능한 언리미티드 에디션입니다. 바이러스 검사를 마친 안전한 파일입니다.</p>
+            <div class="btn-dl" style="background:#e74c3c;">버그판 다운로드</div>
         </div>
 
-        <div class="app-card" onclick="openModal('로블록스 핵 메뉴 2024', 'https://upload.wikimedia.org/wikipedia/commons/3/3a/Roblox_player_icon_black.svg')">
-            <span class="tag-hot">HACK MENU</span>
+        <div class="app-card" onclick="openModal('로블록스 핵 메뉴 v2.6', 'https://upload.wikimedia.org/wikipedia/commons/3/3a/Roblox_player_icon_black.svg', '스피드핵, 비행, 월핵 기능이 포함된 최신 메뉴입니다. 모든 서버에서 감지되지 않고 작동합니다.')">
+            <span class="tag-mod">HACK MENU</span>
             <div class="app-top">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Roblox_player_icon_black.svg" alt="rbx">
-                <div class="app-info"><h3>Roblox Hack Menu</h3><p>월핵/스피드핵/비행</p></div>
+                <div class="app-info"><h3>Roblox Hack Menu</h3><p>감지 불가/최신버전</p></div>
             </div>
-            <p class="app-desc">감지되지 않는 최신 로블록스 핵 메뉴입니다. 모바일 및 PC 버전 모두 호환되며 정지 방지 스크립트가 내장되어 있습니다.</p>
-            <div class="btn-dl" style="background: #e74c3c;">핵 버전 다운로드</div>
+            <p class="app-desc">강력한 스크립트 실행기가 내장되어 있어 원하는 핵을 즉시 적용할 수 있습니다.</p>
+            <div class="btn-dl" style="background:#e74c3c;">핵 버전 다운로드</div>
         </div>
     </div>
 
-    <div class="ad-slot">
-        <p style="color:#aaa">RECOMMENDED FOR YOU</p>
+    <div class="ad-banner-main">
+        <span style="color:#ccc">RECOMMENDED SOFTWARE</span>
     </div>
 
-    <div class="section-title blue-title">무료 계정 & 충전 센터</div>
+    <div class="section-title blue-title">게임 재화 & 무료 계정</div>
     <div class="app-grid">
-        <div class="app-card" onclick="openModal('무료 Robux 생성기', 'https://upload.wikimedia.org/wikipedia/commons/c/ce/Roblox_Logo.svg')">
+        <div class="app-card" onclick="openModal('무료 Robux 충전기', 'https://upload.wikimedia.org/wikipedia/commons/c/ce/Roblox_Logo.svg', '공식 API를 우회하여 계정에 즉시 로벅스를 충전합니다. 1인당 1회 최대 10,000 Robux까지 가능합니다.')">
             <div class="app-top">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Roblox_player_icon_black.svg" alt="rbx">
-                <div class="app-info"><h3>무료 로벅스 충전</h3><p>이벤트 진행 중</p></div>
+                <div class="app-info"><h3>무료 로벅스 충전</h3><p>Robux Generator</p></div>
             </div>
-            <p class="app-desc">공식 API 연동을 통해 본인의 계정에 안전하게 로벅스를 생성합니다. 하루 선착순 100명 한정.</p>
+            <p class="app-desc">아이디 입력만으로 로벅스를 즉시 지급받으세요. 별도의 비밀번호를 요구하지 않습니다.</p>
             <div class="btn-dl">무료 충전 시작</div>
         </div>
+
+        <div class="app-card" onclick="openModal('마인크래프트 프리미엄 계정', 'https://upload.wikimedia.org/wikipedia/en/5/51/Minecraft_cover.png', '하이픽셀 등 모든 정품 서버 접속이 가능한 마인크래프트 프리미엄 계정을 생성해 드립니다.')">
+            <div class="app-top">
+                <img src="https://upload.wikimedia.org/wikipedia/en/5/51/Minecraft_cover.png" alt="mc">
+                <div class="app-info"><h3>MC 계정 생성기</h3><p>Full Access Account</p></div>
+            </div>
+            <p class="app-desc">이메일 변경이 가능한 정품 계정을 즉시 발급받으세요. 선착순 이벤트 중입니다.</p>
+            <div class="btn-dl">계정 생성</div>
         </div>
+    </div>
 </div>
 
 <footer>
-    <div style="display:flex; justify-content:space-between;">
+    <div style="display:flex; justify-content:space-between; flex-wrap:wrap;">
         <div>
-            <h3>Softonic International</h3>
-            <p>© 1997-2026 All Rights Reserved.</p>
-            <p>본사: Barcelona, Spain | 연락처: legal@softonic.com</p>
+            <h3 style="color:white;">Softonic International</h3>
+            <p>© 1997-2026 Softonic. All rights reserved.</p>
+            <p>본사: Barcelona, Spain | 사업자: B-61705621</p>
         </div>
         <div style="text-align:right;">
-            <p>Terms of Service</p>
-            <p>Privacy Policy</p>
-            <p>DMCA Policy</p>
+            <p>Privacy Policy | Terms of Service | Contact Us</p>
         </div>
     </div>
 </footer>
 
 <div id="download-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); justify-content:center; align-items:center; z-index:9999;">
-    <div style="background:white; padding:30px; border-radius:15px; width:90%; max-width:400px; text-align:center;">
-        <img id="modal-icon" src="" style="width:70px; border-radius:12px;">
-        <h2 id="modal-title">앱 이름</h2>
-        <button id="start-btn" onclick="startProcess()" style="background:#004a99; color:white; border:none; padding:15px; width:100%; border-radius:8px; font-weight:bold; cursor:pointer; font-size:18px;">데이터 요청 시작</button>
+    <div style="background:white; padding:30px; border-radius:15px; width:90%; max-width:420px; text-align:center;">
+        <img id="modal-icon" src="" style="width:70px; border-radius:12px; margin-bottom:10px;">
+        <h2 id="modal-title" style="margin: 0 0 10px 0;">앱 이름</h2>
+        <p id="modal-desc" style="font-size: 14px; color: #666; margin-bottom: 20px;">설명글이 들어갑니다.</p>
+        <button id="start-btn" onclick="startProcess()" style="background:#004a99; color:white; border:none; padding:15px; width:100%; border-radius:8px; font-weight:bold; cursor:pointer; font-size:18px;">파일 생성 시작</button>
         <div id="loading-area" style="display:none; margin-top:20px;">
-            <p id="status-text">연결 중...</p>
+            <p id="status-text" style="font-weight: bold; margin-bottom: 5px;">준비 중...</p>
             <div style="width:100%; background:#eee; height:12px; border-radius:10px; overflow:hidden;"><div id="fill" style="width:0%; height:100%; background:#e74c3c; transition:0.1s;"></div></div>
         </div>
     </div>
 </div>
 
 <script>
-    function openModal(name, icon) {
+    function openModal(name, icon, desc) {
         document.getElementById('download-modal').style.display = 'flex';
         document.getElementById('modal-title').innerText = name;
         document.getElementById('modal-icon').src = icon;
+        document.getElementById('modal-desc').innerText = desc;
     }
 
     function startProcess() {
@@ -127,16 +135,16 @@
         let interval = setInterval(() => {
             if (width >= 100) {
                 clearInterval(interval);
-                status.innerText = "완료! 광고 확인 후 즉시 지급됩니다.";
+                status.innerText = "준비 완료! 페이지로 이동합니다.";
                 setTimeout(() => {
-                    // ★중요: 여기에 Adsterra의 [Direct Link] 주소를 넣으세요!
-                    location.href = "여기에_Direct_Link_주소를_넣으세요";
+                    // ★중요: 여기에 Adsterra의 [Smartlink] 또는 [Direct Link] 주소를 넣으세요
+                    location.href = "여기에_스마트링크_주소_입력";
                 }, 1500);
             } else {
                 width++;
                 fill.style.width = width + '%';
-                if(width == 40) status.innerText = "바이러스 보안 검사 중...";
-                if(width == 80) status.innerText = "데이터 팩 생성 중...";
+                if(width == 30) status.innerText = "보안 서버 연결 중...";
+                if(width == 70) status.innerText = "패치 파일 구성 중...";
             }
         }, 50);
     }
